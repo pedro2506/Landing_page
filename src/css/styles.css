@@ -91,9 +91,168 @@ header {
     color: var(--color-primary-1);
 }
 
-/* Botão "Contatar" (escondido no mobile) */
+#container {
+    background-image: url('../images/fundo-mobile.png');
+    background-size: contain;
+    height: 400vh;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--color-neutral-8);
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 60px;
+        height: 4px;
+        background-color: var(--color-primary-1);
+        display: block;
+        border-radius: 30px;
+    }
+}
+
+a.btn {
+    text-decoration: none;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
 .btn-default {
-    display: none; /* Escondido no mobile */
+    
+    background-color: var(--color-primary-1);
+    color: var(--color-neutral-0);
+
+    &:hover {
+        background-color: var(--color-primary-2);
+    }
+}
+
+.btn-outlined {
+    border: 2px solid var(--color-primary-1);
+    color: var(--color-primary-1);
+    background-color: transparent;
+
+    &:hover {
+        background-color: var(--color-primary-1);
+        color: var(--color-neutral-0);
+    }
+}
+
+
+#home {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    min-height: calc(100vh - 96px);
+    padding: 32px 4%;
+    padding-top: clamp(0px, 5vw, 32px);
+
+    .home-image {
+        width: clamp(300px, 50%, 400px);
+        mix-blend-mode: multiply;
+        }
+    .home-title {
+        color:var(--color-neutral-8);
+        text-align: center;
+        font-size: clamp(3rem, 5vw, 4.3rem);
+        text-transform: uppercase;
+        line-height: 1.2;
+        max-width: 700px;
+
+        span {
+            color: var(--color-primary-1);
+        }
+
+}
+.home-description {
+    color: var(--color-neutral-9);
+    text-align: center;
+    font-size:1rem;
+    font-weight: 500;
+    max-width: 600px;
+}
+.home-actions{
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+#trending {
+    padding: 32px 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    min-height: calc(100vh - 96px);
+}
+
+.trending-cards {
+    display: flex;
+    flex-direction: column; /* Mobile: empilhados */
+    align-items: center; /* Centraliza os cards empilhados */
+    gap: 24px; /* Espaçamento entre os cards */
+    width: 100%; /* Ocupa toda a largura disponível */
+}
+
+.trending-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: clamp(300px, 50%, 400px); 
+    max-width: 380px;
+    overflow: hidden;
+}
+
+/* IMAGEM DENTRO DO CARD: Garante que ela ocupe 100% da largura do seu card */
+.trending-card img {
+    width: 100%; 
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    mix-blend-mode: multiply; /* Mantendo o efeito que você já usa */
+}
+
+/* Estilos para o conteúdo textual dentro dos cards */
+.trending-card .trending-rate {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #f5b940; /* Exemplo de cor para a estrela */
+}
+
+.trending-card .trending-description {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-neutral-8);
+    margin-top: 8px;
+}
+
+.trending-card .trending-card-description {
+    margin-top: 4px;
+}
+
+.trending-card .trending-card-description span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-primary-1);
 }
 
 /* ============================================= */
